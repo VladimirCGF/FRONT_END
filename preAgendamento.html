@@ -32,17 +32,17 @@
 
             <form id="form">
                 <div>
-                    <input id="nome" type="text" class="inputs" placeholder="Digite seu nome" required autofocus>
-                    <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                    <input id="nome" type="text" class="inputs required"  placeholder="Digite seu nome" oninput="nameValidate()">
+                    <span class="span-required">Nome deve ter no mínimo 3 letras</span>
                 </div>
                 
                 <div>
-                    <input id="email" type="email" class="inputs" placeholder="Digite seu email" required autofocus>
+                    <input id="email" type="email" class="inputs required" placeholder="Digite seu email" oninput="emailValidate()">
                     <span class="span-required">Digite um E-mail válido</span>
                 </div>
                 
                 <div>
-                    <input id="telefone" type="tel" class="inputs" placeholder="Digite seu telefone" required autofocus>
+                    <input id="telefone" type="tel" class="inputs required" placeholder="Digite seu telefone" oninput="telValidate()">
                     <span class="span-required">Digite seu número de telefone</span>
                 </div>
 
@@ -93,6 +93,63 @@
                 console.log(titulo);
                 console.log(titulo.textContent);
                 titulo.textContent = ("Pré-agendamento");
+
+                const form   = document.getElementById('form');
+                const campos = document.querySelectorAll('.required');
+                const spans  = document.querySelectorAll('.span-required');
+                const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                const telRegex =  /^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+
+                form.addEventListener('submit', (event) =>{
+                    event.preventDefault();
+                    nameValidate();
+                    emailValidate();
+                    telValidate();
+                });
+
+                function setError(index){
+                    campos[index].style.border = '3px solid #e63636';
+                    spans[index].style.display = 'block';
+                }
+
+                function removeError(index){
+                    campos[index].style.border = '';
+                    spans[index].style.display = 'none';
+                }
+
+                function nameValidate(){
+                 if(campos[0].value.length < 3)
+                 {
+                    setError(0);
+                 }   
+                 else
+                 {
+                    removeError(0);
+                 }
+                }
+
+                function emailValidate(){
+                    if(!emailRegex.test(campos[1].value))
+                    {
+                        setError(1);
+                    }
+                    else
+                    {
+                        removeError(1);
+                    }
+                }
+
+                function telValidate(){
+                    if(!telRegex.test(campos[2].value))
+                    {
+                    setError(2);
+                    }
+                    else
+                    {
+                        removeError(2);
+                    }
+                }
+
             </script>
 
         </div>
@@ -147,6 +204,9 @@
             }
             
             .span-required{
+                font-size: 12px;
+                margin: 3px 0 0 1px;
+                color: red;
                 display:none;
             }
             
