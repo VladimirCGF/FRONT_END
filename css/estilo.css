@@ -54,8 +54,8 @@ body {
     background-color: #414141;
     padding: 10px;
     border-radius: 10px;
-    transition: 1s;
-    color: #00ffff;
+    transition: 200ms;
+    color: #f0dd39;
 }
 
 .pagina {

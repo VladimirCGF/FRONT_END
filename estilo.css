@@ -43,7 +43,7 @@ body {
 
 .navi-header {
     
-    gap: 3em;
+    gap: 2em;
 }
 
 .navi-header a {
@@ -54,8 +54,8 @@ body {
     background-color: #414141;
     padding: 10px;
     border-radius: 10px;
-    transition: 1s;
-    color: #00ffff;
+    transition: 1ms;
+    color: #f1d845;
 }
 
 .pagina {
