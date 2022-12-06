@@ -1,51 +1,134 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-#corpo, ul, li, p, h1 {
+body, ul, li, p {
     margin: 0;
     padding: 0;
     list-style: none;
     font-size: 1.2rem;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
 }
 
-#cabecalho {
-    height: 30vh;
-    width: 100vw;
-    border: 3px solid black;
+body {
+    background-color: #ffffff;
+    color: #272727;
+
 }
 
-.logo {
+.corpo {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.titulo {
-    display: flex;
-    justify-content: center;
-}
-.titulo h1 {
-    text-transform: uppercase;
-    font-size: 1.6rem;
+.img-logo-header {
+    width: 45px;
 }
 
-.menu {
-    display: flex;
-    justify-content: center;
-}
-
-.menu li {
+.header,
+.navi-header {
     display: flex;
     flex-direction: row;
-    align-self: center;
+    align-items: center;
 }
 
-.menu li a {
-    padding: 15px;
+.header {
+    background-color: #2d2d2d;
+    box-shadow: 1px 1px 4px #1c1c1c;
+    height: 3.5em;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.navi-header {
+    
+    gap: 3em;
+}
+
+.navi-header a {
+    color: #ffffff;
+}
+
+.navi-header a:hover {
+    background-color: #414141;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 1s;
+    color: #00ffff;
+}
+
+.pagina {
+    background-color: #fff;
+    color: #000;
+}
+
+.main-index {
+    background-image: url("../img/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    height: 100vh;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+
+}
+
+.img-procedimento {
+    background-image: url("../img/Bg-Procedimentos-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 50vw;
+    float: right;
+}
+
+p {
+    margin-top: 15px;
+    line-height: 2;
+}
+
+.texto-cc {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.texto-cc p {
+    line-height: 2;
+    color: #ffffff;
+}
+
+.list li {
+    line-height: 2;
+}
+
+.img-quemsou {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: #ffffff;
+    background-color: #2d2d2d;
+    box-shadow: 1px 1px 1px 4px #1c1c1c;
+    height: 3.5em;
+    padding: 0 10%;
+    
+    
+        
+        
+
 }
