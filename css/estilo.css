@@ -111,11 +111,41 @@ p {
 
 .img-quemsou {
     display: flex;
-    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.img-quemsou p {
+    margin: 0;
+    margin-left: 10px;
+}
+
+
+.list-carousel {
+    display: flex;
     justify-content: space-between;
 
 }
 
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+
+}
+
+.botao {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.img-carousel {
+    border-radius: 100px;
+}
+
+.footer a{
+    color: rgba(106, 163, 238, 0.911);
+}
 
 .footer {
     display: flex;
@@ -126,9 +156,4 @@ p {
     box-shadow: 1px 1px 1px 4px #1c1c1c;
     height: 3.5em;
     padding: 0 10%;
-    
-    
-        
-        
-
 }

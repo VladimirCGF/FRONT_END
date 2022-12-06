@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Centro Capilar</title>
+    <title>Clinica Estética</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="icon" href="./img/logo.png">
 </head>
@@ -10,7 +10,7 @@
 <div class="corpo">
     <div class="header" id="header">
         <div class="logo-header">
-            <img src="img/logo.png" class="img-logo-header" alt="Logo">
+            <img style="width: 100px;" class="img-responsive" alt="Logo Unitins" src="https://www.unitins.br/uniPerfil/Logomarca/Imagem/09997c779523a61bd01bb69b0a789242">
         </div>
         <div class="navi-header">
 
@@ -30,23 +30,78 @@
                 e revitalização dos fios, infusões de medicamentos no couro cabeludo através da intradermoterapia,
                 led capilar e tricoscopia. Os protocolos são exclusivos para cada tipo de cabelo e patologias.</p>
         </div>
-        <div class="list">
-            <ul>
-                <li>– Revitalização dos fios</li>
-                <li>– Crescimento capilar</li>
-                <li>– Queda</li>
-                <li>– Tratamento para caspa</li>
-                <li>– Excesso de oleosidade</li>
-                <li>– Patologias do couro cabeludo</li>
-            </ul>
+        <div class="list-carousel">
+            <div class="list">
+                <ul>
+                    <li>– Revitalização dos fios</li>
+                    <li>– Crescimento capilar</li>
+                    <li>– Queda</li>
+                    <li>– Tratamento para caspa</li>
+                    <li>– Excesso de oleosidade</li>
+                    <li>– Patologias do couro cabeludo</li>
+                </ul>
+            </div>
+            <div class="carousel">
+                <img class="botao" src="img/antes.png" height="40px" width="40px" onclick="antes()">
+                <div>
+                    <img id="img-1" class="img-carousel" src="img/revitalizacao-dos-fios.jpg" width="400px"
+                         height="300px">
+                    <img id="img-2" class="img-carousel" src="img/crescimento-capilar.jpg" width="400px" height="300px">
+                    <img id="img-3" class="img-carousel" src="img/maxresdefault.jpg" width="400px" height="300px">
+                </div>
+                <img class="botao" src="img/proxima.png" height="40px" width="40px" onclick="proximo()">
+            </div>
         </div>
+
     </div>
 </div>
 <div class="footer">
     <p>Desenvolvido por Vladimir Coutinho e Marcelo na disciplina de Desenvolvimento Front-End –
         2022</p>
 </div>
-
-
 </body>
+<script>
+    var img1 = document.getElementById('img-1');
+    var img2 = document.getElementById('img-2');
+    var img3 = document.getElementById('img-3');
+    var imgAtual = 1;
+
+    img2.setAttribute("hidden", true);
+    img3.setAttribute("hidden", true);
+
+    function proximo() {
+        switch (imgAtual) {
+            case 1:
+                img1.setAttribute("hidden", true);
+                img2.removeAttribute("hidden");
+                img3.setAttribute("hidden", true);
+                imgAtual++;
+                break;
+            case 2:
+                img1.setAttribute("hidden", true);
+                img2.setAttribute("hidden", true);
+                img3.removeAttribute("hidden");
+                imgAtual++;
+                break;
+        }
+    }
+
+    function antes() {
+        switch (imgAtual) {
+            case 2:
+                img1.removeAttribute("hidden");
+                img2.setAttribute("hidden", true);
+                img3.setAttribute("hidden", true);
+                imgAtual--;
+                break;
+            case 3:
+                img1.setAttribute("hidden", true);
+                img2.removeAttribute("hidden");
+                img3.setAttribute("hidden", true);
+                imgAtual--;
+                break;
+        }
+
+    }
+</script>
 </html>
